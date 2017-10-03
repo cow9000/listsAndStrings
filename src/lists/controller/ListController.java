@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lists.model.Kahoot;
+import lists.view.PopupDisplay;
 
 public class ListController
 {
 
 	private List<Kahoot> kahootList;
+	private PopupDisplay display;
 	/**
 	 * Initalize all the variables
 	 */
 	public ListController()
 	{
+		display = new PopupDisplay();
 		kahootList = new ArrayList<Kahoot>();
 	}
 	/**
@@ -22,7 +25,14 @@ public class ListController
 	public void start()
 	{
 		fillTheList();
-		System.out.print(kahootList.size());
+		showTheList();
+	}
+	
+	private void showTheList()
+	{
+		for(int index = 0; index < kahootList.size(); index++) {
+			display.displayText(kahootList.get(index).toString());
+		}
 	}
 
 	
@@ -33,12 +43,13 @@ public class ListController
 	{
 		
 		
-		//Repeat the for loop for 2,147,483,647 times
-		for (int index = 0; index < Integer.MAX_VALUE; index++)
+		//Repeat the for loop for 5 times
+		for (int index = 0; index < 5; index++)
 		{
-			Kahoot kahoot = new Kahoot("Derek", index - Integer.MAX_VALUE);
+			Kahoot kahoot = new Kahoot("Derek", Integer.MAX_VALUE);
+			
 			kahootList.add(kahoot);
-			System.out.println(index);
+			
 		}
 		
 		//Add the Kahoot objects we did in class

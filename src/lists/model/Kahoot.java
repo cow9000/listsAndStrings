@@ -46,5 +46,13 @@ public class Kahoot
 		return "";
 
 	}
+	
+	public String toString() {
+		String description = "This Kahoot was made by " + creator + " and it has " + questionCount + " questions.";
+		
+		
+		
+		return description;
+	}
 
 }
