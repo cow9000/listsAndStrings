@@ -61,5 +61,8 @@ public class Kahoot
 	public String getCreator() {
 		return creator;
 	}
+	public String getTopic() {
+		return topic;
+	}
 
 }

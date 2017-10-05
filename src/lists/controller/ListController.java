@@ -46,6 +46,11 @@ public class ListController
 					display.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex+1));
 			}
 			
+			String topic = currentKahoot.getTopic();
+			for(int i = topic.length()-1; i >= 0; i --) {
+				display.displayText(topic.substring(i, i+1));
+			}
+			
 		}
 	}
 
