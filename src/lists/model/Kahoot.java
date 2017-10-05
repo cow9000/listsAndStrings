@@ -54,5 +54,9 @@ public class Kahoot
 		
 		return description;
 	}
+	
+	public String getCreator() {
+		return creator;
+	}
 
 }
