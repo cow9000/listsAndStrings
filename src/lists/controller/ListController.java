@@ -30,8 +30,22 @@ public class ListController
 	
 	private void showTheList()
 	{
+		String currentCreator = "";
 		for(int index = 0; index < kahootList.size(); index++) {
-			display.displayText(kahootList.get(index).toString());
+			
+			Kahoot currentKahoot = kahootList.get(index);
+			currentCreator = currentKahoot.getCreator();
+			display.displayText(currentKahoot.toString());
+			
+			if(currentCreator.equalsIgnoreCase("Nobody")) {
+				for(int loop = 0; loop < 5; loop += 1) {
+					display.displayText("wow" + currentCreator + " does a lot");
+				}
+			}
+			for(int currentLetterIndex = 0; currentLetterIndex < currentCreator.length(); currentLetterIndex += 1) {
+					display.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex+1));
+			}
+			
 		}
 	}
 
@@ -46,18 +60,18 @@ public class ListController
 		//Repeat the for loop for 5 times
 		for (int index = 0; index < 5; index++)
 		{
-			Kahoot kahoot = new Kahoot("Derek", Integer.MAX_VALUE);
+			Kahoot kahoot = new Kahoot("Derek", Integer.MAX_VALUE, "hi is 6 23");
 			
 			kahootList.add(kahoot);
 			
 		}
 		
 		//Add the Kahoot objects we did in class
-		Kahoot fiftyStates = new Kahoot("Kashish", 50);
-		Kahoot mySecondKahoot = new Kahoot("Ethan",2);
-		Kahoot bigQuiz = new Kahoot("Derek", Integer.MAX_VALUE);
-		Kahoot animalColor = new Kahoot("Branton", 10);
-		Kahoot presidents = new Kahoot("Obama",44);
+		Kahoot fiftyStates = new Kahoot("Kashish", 50, "fifty states");
+		Kahoot mySecondKahoot = new Kahoot("Ethan",2, "1");
+		Kahoot bigQuiz = new Kahoot("Derek", Integer.MAX_VALUE, "Everything - literally");
+		Kahoot animalColor = new Kahoot("Branton", 10, "dogeroni colors");
+		Kahoot presidents = new Kahoot("Obama",44, "president of oboamamamamamamama");
 		kahootList.add(fiftyStates);
 		kahootList.add(mySecondKahoot);
 		kahootList.add(bigQuiz);
