@@ -25,7 +25,8 @@ public class ListController
 	public void start()
 	{
 		fillTheList();
-		showTheList();
+		//showTheList();
+		changeTheList();
 	}
 	
 	private void showTheList()
@@ -84,6 +85,17 @@ public class ListController
 		kahootList.add(presidents);
 		
 		
+	}
+	
+	private void changeTheList() {
+		display.displayText("The current list size is: " + kahootList.size());
+		Kahoot removed = kahootList.remove(3);
+		display.displayText("I removed the Kahoot by " + removed.getCreator());
+		display.displayText("The list now has: " + kahootList.size() + " items inside");
+		kahootList.add(0,removed);
+		display.displayText("The list is still: " + kahootList.size() + " items big.");
+		removed = kahootList.set(2, new Kahoot());
+		display.displayText("The kahoot by " + removed.getCreator() + " was replaced with on by: " + kahootList.get(2).getCreator() );
 	}
 
 }
