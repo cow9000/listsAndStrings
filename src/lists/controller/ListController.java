@@ -97,5 +97,13 @@ public class ListController
 		removed = kahootList.set(2, new Kahoot());
 		display.displayText("The kahoot by " + removed.getCreator() + " was replaced with on by: " + kahootList.get(2).getCreator() );
 	}
+	
+	public PopupDisplay getPopup() {
+		return display;
+	}
+	
+	public ArrayList<Kahoot> getKahootList(){
+		return (ArrayList<Kahoot>) kahootList;
+	}
 
 }
