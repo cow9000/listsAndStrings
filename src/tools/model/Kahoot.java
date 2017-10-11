@@ -1,4 +1,4 @@
-package lists.model;
+package tools.model;
 
 import java.util.ArrayList;
 import java.util.List;
